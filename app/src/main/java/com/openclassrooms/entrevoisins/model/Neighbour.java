@@ -1,11 +1,14 @@
 package com.openclassrooms.entrevoisins.model;
 
+
+
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * Model object representing a Neighbour
  */
-public class Neighbour {
+public class Neighbour implements Serializable {
 
     /** Identifier */
     private long id;
@@ -40,6 +43,7 @@ public class Neighbour {
         this.phoneNumber = phoneNumber;
         this.aboutMe = aboutMe;
     }
+
 
     public long getId() {
         return id;
@@ -101,5 +105,5 @@ public class Neighbour {
     public int hashCode() {
         return Objects.hash(id);
     }
-    
+
 }

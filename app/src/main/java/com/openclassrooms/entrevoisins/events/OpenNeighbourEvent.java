@@ -2,11 +2,11 @@ package com.openclassrooms.entrevoisins.events;
 
 import com.openclassrooms.entrevoisins.model.Neighbour;
 
-public class ClickNeighbourEvent {
+public class OpenNeighbourEvent {
 
     public Neighbour neighbour;
 
-    public ClickNeighbourEvent(Neighbour neighbour){
+    public OpenNeighbourEvent(Neighbour neighbour){
         this.neighbour = neighbour;
     }
 

@@ -10,10 +10,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.openclassrooms.entrevoisins.R;
 import com.openclassrooms.entrevoisins.di.DI;
-import com.openclassrooms.entrevoisins.events.ClickNeighbourEvent;
+import com.openclassrooms.entrevoisins.events.OpenNeighbourEvent;
 import com.openclassrooms.entrevoisins.events.DeleteNeighbourEvent;
 import com.openclassrooms.entrevoisins.model.Neighbour;
 import com.openclassrooms.entrevoisins.service.NeighbourApiService;
@@ -21,10 +22,11 @@ import com.openclassrooms.entrevoisins.service.NeighbourApiService;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
+import java.io.Serializable;
 import java.util.List;
 
 
-public class NeighbourFragment extends Fragment {
+public class NeighbourFragment extends Fragment implements Serializable {
 
     private NeighbourApiService mApiService;
     private List<Neighbour> mNeighbours;
@@ -94,9 +96,17 @@ public class NeighbourFragment extends Fragment {
     }
 
     @Subscribe
-    public void onClickNeighbour(ClickNeighbourEvent event){
-        Intent intent = new Intent(getContext(),InfoActivity.class);
-        getContext().startActivity(intent);
+    public void onOpenNeighbour(OpenNeighbourEvent event) {
+        //Intent intent = new Intent(getContext(),InfoActivity.class);
+        //getContext().startActivity(intent);
+
+        //Neighbour neighbour = new Neighbour(1, "Caroline", "https://i.pravatar.cc/150?u=a042581f4e29026704d", "Saint-Pierre-du-Mont ; 5km",
+                //"+33 6 86 57 90 14", "Bonjour !Je souhaiterais faire de la marche nordique. Pas initiée, je recherche une ou plusieurs personnes susceptibles de m'accompagner !J'aime les jeux de cartes tels la belote et le tarot..");
+
+
+        Intent i = new Intent(getContext(), InfoActivity.class);
+        i.putExtra("Editing", event.neighbour);
+        startActivity(i);
 
     }
 
