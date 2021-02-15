@@ -36,6 +36,7 @@ public class InfoActivity extends AppCompatActivity {
 
         mNameText.setText(neighbour.getName());
         Glide.with(this).load(neighbour.getAvatarUrl()).into(mInfoAvatar);
+
     }
 
 }
