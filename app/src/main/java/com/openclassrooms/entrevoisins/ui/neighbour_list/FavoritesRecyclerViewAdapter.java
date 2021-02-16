@@ -13,7 +13,6 @@ import com.bumptech.glide.request.RequestOptions;
 import com.openclassrooms.entrevoisins.R;
 import com.openclassrooms.entrevoisins.model.Neighbour;
 
-import java.text.BreakIterator;
 import java.util.List;
 
 import butterknife.BindView;
@@ -21,12 +20,14 @@ import butterknife.ButterKnife;
 
 public class FavoritesRecyclerViewAdapter extends RecyclerView.Adapter<FavoritesRecyclerViewAdapter.ViewHolder> {
 
-    private final List<Neighbour> mNeighbours;
+    private final List<Neighbour> mFavorites;
 
     public FavoritesRecyclerViewAdapter(List<Neighbour> items ){
-        mNeighbours = items;
+        mFavorites = items;
 
     }
+
+
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -37,7 +38,7 @@ public class FavoritesRecyclerViewAdapter extends RecyclerView.Adapter<Favorites
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        Neighbour neighbour = mNeighbours.get(position);
+        Neighbour neighbour = mFavorites.get(position);
         holder.mNeighbourName.setText(neighbour.getName());
         Glide.with(holder.mNeighbourAvatar.getContext())
                 .load(neighbour.getAvatarUrl())
@@ -48,7 +49,7 @@ public class FavoritesRecyclerViewAdapter extends RecyclerView.Adapter<Favorites
 
     @Override
     public int getItemCount() {
-        return mNeighbours.size();
+        return mFavorites.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
