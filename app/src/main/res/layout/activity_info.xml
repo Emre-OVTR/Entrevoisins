@@ -5,30 +5,32 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/cardview_light_background"
     tools:context=".ui.neighbour_list.InfoActivity">
 
     <ImageView
         android:id="@+id/activity_info_avatar"
         android:layout_width="match_parent"
-        android:layout_height="293dp"
-        android:layout_marginTop="80dp"
-        android:background="@drawable/ic_account"></ImageView>
+        android:layout_height="309dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/ic_launcher_background"></ImageView>
+
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/activity_info_fav_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_star_border_white_24dp"
-        android:layout_marginLeft="320dp"></android.support.design.widget.FloatingActionButton>
+        android:layout_marginLeft="320dp"
+        android:src="@drawable/ic_star_border_white_24dp"></android.support.design.widget.FloatingActionButton>
 
     <TextView
         android:id="@+id/activity_info_name_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
         android:text="name"
-        android:textSize="35dp"
-        android:layout_marginStart="20dp"></TextView>
+        android:textSize="35dp"></TextView>
 
     <TextView
         android:id="@+id/activity_info_about_text"
