@@ -3,6 +3,7 @@ package com.openclassrooms.entrevoisins.ui.neighbour_list;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,6 +19,7 @@ public class InfoActivity extends AppCompatActivity {
     private ImageView mInfoAvatar;
     private FloatingActionButton mInfoFavBtn;
     private TextView mNameText;
+    private TextView mAbout;
 
     private NeighbourApiService mApiService;
 
@@ -30,11 +32,13 @@ public class InfoActivity extends AppCompatActivity {
         mInfoAvatar = findViewById(R.id.activity_info_avatar);
         mInfoFavBtn = findViewById(R.id.activity_info_fav_btn);
         mNameText = findViewById(R.id.activity_info_name_text);
+        mAbout = findViewById(R.id.activity_info_about_text);
 
         Neighbour neighbour = (Neighbour) getIntent().getSerializableExtra("Editing");
 
         mNameText.setText(neighbour.getName());
         Glide.with(this).load(neighbour.getAvatarUrl()).into(mInfoAvatar);
+        mAbout.setText(neighbour.getAboutMe());
 
         mApiService = DI.getNeighbourApiService();
 
@@ -50,6 +54,16 @@ public class InfoActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 
