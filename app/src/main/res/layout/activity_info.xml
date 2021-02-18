@@ -13,8 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="309dp"
         android:layout_marginTop="0dp"
-        android:layout_marginBottom="5dp"
-        android:background="@drawable/ic_launcher_background"></ImageView>
+        android:layout_marginBottom="5dp"></ImageView>
 
 
     <android.support.design.widget.FloatingActionButton
@@ -33,11 +32,27 @@
         android:textSize="35dp"></TextView>
 
     <TextView
+        android:id="@+id/activity_info_phone_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="phone"
+        android:textSize="30dp"></TextView>
+
+    <TextView
+        android:id="@+id/activity_info_address_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="address"
+        android:textSize="30dp"></TextView>
+
+    <TextView
         android:id="@+id/activity_info_about_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="about"
-        android:textSize="20dp"
+        android:textSize="15dp"
         android:layout_marginStart="20dp"></TextView>
 
 

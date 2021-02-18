@@ -20,6 +20,8 @@ public class InfoActivity extends AppCompatActivity {
     private FloatingActionButton mInfoFavBtn;
     private TextView mNameText;
     private TextView mAbout;
+    private TextView mPhone;
+    private TextView mAddress;
 
     private NeighbourApiService mApiService;
 
@@ -33,12 +35,17 @@ public class InfoActivity extends AppCompatActivity {
         mInfoFavBtn = findViewById(R.id.activity_info_fav_btn);
         mNameText = findViewById(R.id.activity_info_name_text);
         mAbout = findViewById(R.id.activity_info_about_text);
+        mPhone = findViewById(R.id.activity_info_phone_text);
+        mAddress = findViewById(R.id.activity_info_address_text);
 
         Neighbour neighbour = (Neighbour) getIntent().getSerializableExtra("Editing");
 
         mNameText.setText(neighbour.getName());
         Glide.with(this).load(neighbour.getAvatarUrl()).into(mInfoAvatar);
         mAbout.setText(neighbour.getAboutMe());
+        mPhone.setText(neighbour.getPhoneNumber());
+        mAddress.setText(neighbour.getAddress());
+
 
         mApiService = DI.getNeighbourApiService();
 

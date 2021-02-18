@@ -5,13 +5,17 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.openclassrooms.entrevoisins.R;
+import com.openclassrooms.entrevoisins.events.DeleteNeighbourEvent;
 import com.openclassrooms.entrevoisins.model.Neighbour;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.List;
 
@@ -45,6 +49,12 @@ public class FavoritesRecyclerViewAdapter extends RecyclerView.Adapter<Favorites
                 .apply(RequestOptions.circleCropTransform())
                 .into(holder.mNeighbourAvatar);
 
+        holder.mDeleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EventBus.getDefault().post(new DeleteNeighbourEvent(neighbour));
+            }
+        });
     }
 
     @Override
@@ -57,6 +67,8 @@ public class FavoritesRecyclerViewAdapter extends RecyclerView.Adapter<Favorites
         public ImageView mNeighbourAvatar;
         @BindView(R.id.item_list_name)
         public TextView mNeighbourName;
+        @BindView(R.id.item_list_delete_button)
+        public ImageButton mDeleteButton;
 
         public ViewHolder(View view) {
             super(view);
