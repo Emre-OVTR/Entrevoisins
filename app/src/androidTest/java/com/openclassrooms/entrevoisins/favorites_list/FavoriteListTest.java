@@ -1,11 +1,14 @@
 package com.openclassrooms.entrevoisins.favorites_list;
 
 
+import android.support.test.espresso.action.ViewActions;
+import android.support.test.espresso.contrib.RecyclerViewActions;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.openclassrooms.entrevoisins.R;
 import com.openclassrooms.entrevoisins.ui.neighbour_list.ListNeighbourActivity;
+import com.openclassrooms.entrevoisins.utils.OpenViewAction;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -18,7 +21,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.assertThat;
 import static android.support.test.espresso.matcher.ViewMatchers.hasMinimumChildCount;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static com.openclassrooms.entrevoisins.utils.RecyclerViewItemCountAssertion.withItemCount;
-import static org.hamcrest.core.IsNull.notNullValue;
+
 
 @RunWith(AndroidJUnit4.class)
 public class FavoriteListTest {
@@ -33,12 +36,23 @@ public class FavoriteListTest {
     @Before
     public void setUp() {
         mActivity = mActivityRule.getActivity();
-        assertThat(mActivity, notNullValue());
+
     }
 
     @Test
     public void favoriteListDisplaysOnlyFavoriteAddedItem() {
 
-        onView(withId(R.id.list_neighbours)).check(withItemCount(ITEMS_COUNT));
+        onView(withId(R.id.list_favorites)).check(withItemCount(ITEMS_COUNT));
+
+        onView(withId(R.id.list_neighbours))
+                .perform(RecyclerViewActions.actionOnItemAtPosition(1, new OpenViewAction()));
+
+        onView(withId(R.id.activity_info_fav_btn)).perform(ViewActions.click());
+
+        //onView(withId(R.id.list_favorites)).check(withItemCount(ITEMS_COUNT+1));
+
+
+        onView(withId(R.id.list_favorites))
+                .check(matches(hasMinimumChildCount(1)));
     }
 }

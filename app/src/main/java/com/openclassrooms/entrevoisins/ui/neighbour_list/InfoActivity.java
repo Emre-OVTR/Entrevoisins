@@ -57,7 +57,8 @@ public class InfoActivity extends AppCompatActivity {
             public void onClick(View v) {
 
             mApiService.addFavorite(neighbour);
-                finish();
+            finish();
+
             }
         });
 

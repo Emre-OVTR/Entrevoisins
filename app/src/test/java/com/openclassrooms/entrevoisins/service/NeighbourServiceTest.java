@@ -9,6 +9,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertFalse;
@@ -40,4 +41,19 @@ public class NeighbourServiceTest {
         service.deleteNeighbour(neighbourToDelete);
         assertFalse(service.getNeighbours().contains(neighbourToDelete));
     }
+
+    @Test
+    public void getFavoritesWithSuccess() {
+        List<Neighbour> favorites = service.getFavorites();
+        List<Neighbour> expectedFavorites = new ArrayList<>();
+        assertThat(favorites, IsIterableContainingInAnyOrder.containsInAnyOrder(expectedFavorites.toArray()));
+    }
+
+    //@Test
+    //public void deleteFavoriteWithSuccess() {
+        //Neighbour favoriteToDelete = service.addFavorite();
+        //service.deleteFavorite(favoriteToDelete);
+        //assertFalse(service.getFavorites().contains(favoriteToDelete));
+
+    //}
 }

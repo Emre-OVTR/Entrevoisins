@@ -47,6 +47,7 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
 
     @Override
     public void addFavorite(Neighbour neighbour) {
+       // for (Neighbour id:favorites){
         favorites.add(neighbour);
     }
 
