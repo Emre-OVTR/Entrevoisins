@@ -23,6 +23,7 @@ import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.assertThat;
 import static android.support.test.espresso.matcher.ViewMatchers.hasMinimumChildCount;
+import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withSpinnerText;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
@@ -83,6 +84,7 @@ public class NeighboursListTest {
 
         onView(withId(R.id.list_neighbours)).perform(RecyclerViewActions.actionOnItemAtPosition(1, new OpenViewAction()));
 
+        onView(withId(R.id.activity_info_name_text)).check(matches(isDisplayed()));
     }
 
     @Test
@@ -91,7 +93,7 @@ public class NeighboursListTest {
 
         onView(withId(R.id.list_neighbours)).perform(RecyclerViewActions.actionOnItemAtPosition(1, new OpenViewAction()));
 
-        onView(withId(R.id.activity_info_name_text)).check(matches(not(withText(""))));
+        onView(withId(R.id.activity_info_name_text)).check(matches(withText("Jack")));
     }
 
 
