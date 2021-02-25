@@ -14,6 +14,9 @@ import com.openclassrooms.entrevoisins.di.DI;
 import com.openclassrooms.entrevoisins.model.Neighbour;
 import com.openclassrooms.entrevoisins.service.NeighbourApiService;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class InfoActivity extends AppCompatActivity {
 
     private ImageView mInfoAvatar;
@@ -22,6 +25,7 @@ public class InfoActivity extends AppCompatActivity {
     private TextView mAbout;
     private TextView mPhone;
     private TextView mAddress;
+    
 
     private NeighbourApiService mApiService;
 
@@ -56,8 +60,9 @@ public class InfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-            mApiService.addFavorite(neighbour);
-            finish();
+                mApiService.addFavorite(neighbour);
+                 finish();
+
 
             }
         });

@@ -4,6 +4,7 @@ import com.openclassrooms.entrevoisins.model.Neighbour;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.util.List;
 
 /**
