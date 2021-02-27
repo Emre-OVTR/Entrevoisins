@@ -35,7 +35,7 @@
             android:id="@+id/activity_info_name_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="220dp"
             android:text="name"
             android:textStyle="normal"
@@ -100,15 +100,17 @@
             android:text="A propos de moi"
             android:textStyle="normal"
             android:textColor="@color/colorSecondaryBlack"
-            android:textSize="30dp"
-            android:padding="15dp"></TextView>
+            android:textSize="25dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:padding="0dp"></TextView>
 
 
         <TextView
         android:id="@+id/activity_info_about_text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="15dp"
+        android:padding="20dp"
         android:text="about"
         android:textSize="15dp"
         android:layout_marginTop="50dp"    ></TextView>
