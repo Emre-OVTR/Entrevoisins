@@ -25,6 +25,7 @@ public class InfoActivity extends AppCompatActivity {
     private TextView mAbout;
     private TextView mPhone;
     private TextView mAddress;
+    private TextView mDetailNameText;
     
 
     private NeighbourApiService mApiService;
@@ -41,10 +42,12 @@ public class InfoActivity extends AppCompatActivity {
         mAbout = findViewById(R.id.activity_info_about_text);
         mPhone = findViewById(R.id.activity_info_phone_text);
         mAddress = findViewById(R.id.activity_info_address_text);
+        mDetailNameText = findViewById(R.id.activity_detail_name_text);
 
         Neighbour neighbour = (Neighbour) getIntent().getSerializableExtra("Editing");
 
         mNameText.setText(neighbour.getName());
+        mDetailNameText.setText(neighbour.getName());
         Glide.with(this).load(neighbour.getAvatarUrl()).into(mInfoAvatar);
         mAbout.setText(neighbour.getAboutMe());
         mPhone.setText(neighbour.getPhoneNumber());
