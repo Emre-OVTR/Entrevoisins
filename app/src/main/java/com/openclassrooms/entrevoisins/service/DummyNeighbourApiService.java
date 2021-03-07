@@ -1,5 +1,7 @@
 package com.openclassrooms.entrevoisins.service;
 
+import android.util.Log;
+
 import com.openclassrooms.entrevoisins.model.Neighbour;
 
 import java.util.ArrayList;
@@ -48,8 +50,22 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
 
     @Override
     public void addFavorite(Neighbour neighbour) {
-       // for (Neighbour id:favorites){
-        favorites.add(neighbour);
+
+
+        boolean isInList = false;
+        for ( Neighbour item : favorites){
+
+
+
+            if ( item.getId() == neighbour.getId()){// id de l'item est present dans la liste isinliist = true
+                isInList = true;
+                break; // arrete la boucle
+            }
+            
+        }
+        if (!isInList){    // si item == false cela veut dire que l'id de l'item  n'est pas ds la liste donc ajoute en fav
+            favorites.add(neighbour);
+        }
     }
 
     @Override

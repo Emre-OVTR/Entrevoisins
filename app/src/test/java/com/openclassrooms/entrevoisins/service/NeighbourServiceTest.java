@@ -26,7 +26,7 @@ import static org.junit.Assert.assertTrue;
 public class NeighbourServiceTest {
 
     private NeighbourApiService service;
-    //public List <Neighbour> favorites = new ArrayList<>();
+
 
 
 
@@ -72,6 +72,17 @@ public class NeighbourServiceTest {
         service.getFavorites().get(0);
         service.deleteFavorite(neighbour);
         assertFalse(service.getFavorites().contains(neighbour));
+
+
+    }
+
+    @Test
+    public void addFavoritesOnceWithSuccess(){
+        Neighbour neighbour = service.getNeighbours().get(0);
+        service.addFavorite(neighbour);
+        service.addFavorite(neighbour);
+        assertTrue(service.getFavorites().contains(neighbour));
+        assertEquals(service.getFavorites().size(), 1);
 
 
     }
