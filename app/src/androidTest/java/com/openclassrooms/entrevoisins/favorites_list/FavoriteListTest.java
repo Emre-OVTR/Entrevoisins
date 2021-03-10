@@ -49,8 +49,6 @@ public class FavoriteListTest {
 
         onView(withId(R.id.activity_info_fav_btn)).perform(ViewActions.click());
 
-        //onView(withId(R.id.list_favorites)).check(withItemCount(ITEMS_COUNT+1));
-
 
         onView(withId(R.id.list_favorites))
                 .check(matches(hasMinimumChildCount(1)));
