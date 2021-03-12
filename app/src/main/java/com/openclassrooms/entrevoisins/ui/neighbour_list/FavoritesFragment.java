@@ -82,6 +82,13 @@ public class FavoritesFragment extends Fragment {
         initList();
     }
 
+    // AJOUTé
+    @Subscribe
+    public void onDeleteNeighbour(DeleteNeighbourEvent event) {
+        mApiService.deleteNeighbour(event.neighbour);
+        initList();
+    }
+
 }
 
 

@@ -72,7 +72,7 @@ public class NeighboursListTest {
         onView(withId(R.id.list_neighbours)).check(withItemCount(ITEMS_COUNT));
         // When perform a click on a delete icon
         onView(withId(R.id.list_neighbours))
-                .perform(RecyclerViewActions.actionOnItemAtPosition(1, new DeleteViewAction()));
+                .perform(RecyclerViewActions.actionOnItemAtPosition(0, new DeleteViewAction()));
         // Then : the number of element is 11
         onView(withId(R.id.list_neighbours)).check(withItemCount(ITEMS_COUNT-1));
     }
@@ -93,7 +93,7 @@ public class NeighboursListTest {
 
         onView(withId(R.id.list_neighbours)).perform(RecyclerViewActions.actionOnItemAtPosition(0, new OpenViewAction()));
 
-        onView(withId(R.id.activity_info_name_text)).check(matches(withText("Caroline")));
+        onView(withId(R.id.activity_info_name_text)).check(matches(withText("Jack")));
     }
 
 

@@ -44,7 +44,9 @@ public class InfoActivity extends AppCompatActivity {
         mAddress = findViewById(R.id.activity_info_address_text);
         mDetailNameText = findViewById(R.id.activity_detail_name_text);
 
+
         Neighbour neighbour = (Neighbour) getIntent().getSerializableExtra("Editing");
+
 
         mNameText.setText(neighbour.getName());
         mDetailNameText.setText(neighbour.getName());

@@ -35,7 +35,27 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
      */
     @Override
     public void deleteNeighbour(Neighbour neighbour) {
-        neighbours.remove(neighbour);
+
+        boolean isInList = false;
+
+        for ( Neighbour item : favorites){
+
+            if (item.getId() == neighbour.getId()){
+                isInList = true;
+                break;
+            }
+        }
+
+        if (!isInList){
+            neighbours.remove(neighbour);
+        }
+
+        if (isInList){
+            favorites.remove(neighbour);
+        }
+
+        //neighbours.remove(neighbour);
+        //favorites.remove(neighbour);
     }
 
     /**
@@ -57,7 +77,7 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
 
 
 
-            if ( item.getId() == neighbour.getId()){// id de l'item est present dans la liste isinliist = true
+            if ( item.getId() == neighbour.getId()){// id de l'item est present dans la liste isinlist = true
                 isInList = true;
                 break; // arrete la boucle
             }
@@ -66,6 +86,7 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
         if (!isInList){    // si item == false cela veut dire que l'id de l'item  n'est pas ds la liste donc ajoute en fav
             favorites.add(neighbour);
         }
+
     }
 
     @Override

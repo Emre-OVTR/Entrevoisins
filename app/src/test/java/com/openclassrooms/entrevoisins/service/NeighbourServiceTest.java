@@ -86,4 +86,14 @@ public class NeighbourServiceTest {
 
 
     }
+
+    @Test
+    public void deleteNeighbourFromFavoritesWithSuccess(){
+        Neighbour neighbour = service.getNeighbours().get(0);
+        service.addFavorite(neighbour);
+        service.getNeighbours().get(0);
+        service.deleteNeighbour(neighbour);
+        assertFalse(service.getFavorites().contains(neighbour));
+    }
+
 }
