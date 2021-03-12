@@ -31,14 +31,14 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
         mNeighbours = items;
     }
 
-    @Override // Elle nous permet de créer un ViewHolder à partir du layout XML représentant chaque ligne de la RecyclerView. Celle-ci sera appelée pour les premières lignes visibles de la RecyclerView.
+    @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.fragment_neighbour, parent, false);
         return new ViewHolder(view);
     }
 
-    @Override // Cette méthode est appelée pour chacune des lignes visibles affichées dans notre RecyclerView.  C'est généralement ici que l'on met à jour leur apparence
+    @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         Neighbour neighbour = mNeighbours.get(position);
         holder.mNeighbourName.setText(neighbour.getName());
@@ -62,7 +62,7 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
         });
     }
 
-    @Override // Cette méthode permet de retourner la taille de notre liste d'objet, et ainsi indiquer à l'Adapter le nombre de lignes que peut contenir la RecyclerView.
+    @Override
     public int getItemCount() {
         return mNeighbours.size();
     }

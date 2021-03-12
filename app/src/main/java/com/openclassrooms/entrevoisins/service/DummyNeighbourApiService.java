@@ -15,7 +15,7 @@ import java.util.List;
 public class DummyNeighbourApiService implements  NeighbourApiService {
 
     private List<Neighbour> neighbours = DummyNeighbourGenerator.generateNeighbours();
-    public List<Neighbour> favorites =  new ArrayList<>();//Collections.emptyList();
+    public List<Neighbour> favorites =  new ArrayList<>();
 
     /**
      * {@inheritDoc}
@@ -34,7 +34,7 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
      * {@inheritDoc}
      */
     @Override
-    public void deleteNeighbour(Neighbour neighbour) { // boucle pour supprimer neighbour de neighbourlist et fav list en meme temps
+    public void deleteNeighbour(Neighbour neighbour) {
 
         boolean isInList = false;
 
@@ -54,7 +54,7 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
             favorites.remove(neighbour);
         }
 
-        // code original; neighbours.remove(neighbour);
+
 
     }
 
@@ -77,13 +77,13 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
 
 
 
-            if ( item.getId() == neighbour.getId()){// id de l'item est present dans la liste isinlist = true
+            if ( item.getId() == neighbour.getId()){
                 isInList = true;
-                break; // arrete la boucle
+                break;
             }
             
         }
-        if (!isInList){    // si item == false cela veut dire que l'id de l'item  n'est pas ds la liste donc ajoute en fav
+        if (!isInList){
             favorites.add(neighbour);
         }
 

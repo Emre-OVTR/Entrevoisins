@@ -39,7 +39,7 @@ import static org.hamcrest.core.IsNull.notNullValue;
 @RunWith(AndroidJUnit4.class)
 public class NeighboursListTest {
 
-    // This is fixed
+
     private static int ITEMS_COUNT = 12;
     private ListNeighbourActivity mActivity;
 
@@ -58,7 +58,6 @@ public class NeighboursListTest {
      */
     @Test
     public void myNeighboursList_shouldNotBeEmpty() {
-        // First scroll to the position that needs to be matched and click on it.
         onView(withId(R.id.list_neighbours))
                 .check(matches(hasMinimumChildCount(1)));
     }
@@ -68,19 +67,16 @@ public class NeighboursListTest {
      */
     @Test
     public void myNeighboursList_deleteAction_shouldRemoveItem() {
-        // Given : We remove the element at position 2
         onView(withId(R.id.list_neighbours)).check(withItemCount(ITEMS_COUNT));
-        // When perform a click on a delete icon
+
         onView(withId(R.id.list_neighbours))
                 .perform(RecyclerViewActions.actionOnItemAtPosition(0, new DeleteViewAction()));
-        // Then : the number of element is 11
+
         onView(withId(R.id.list_neighbours)).check(withItemCount(ITEMS_COUNT-1));
     }
 
     @Test
     public void myNeighboursList_openAction_shouldStartInfoActivity() {
-
-        //onView(withId(R.id.list_neighbours)).check(withItemCount(ITEMS_COUNT));
 
         onView(withId(R.id.list_neighbours)).perform(RecyclerViewActions.actionOnItemAtPosition(1, new OpenViewAction()));
 
@@ -89,7 +85,6 @@ public class NeighboursListTest {
 
     @Test
     public void nameText_shouldNotBeEmpty() {
-        //onView(withId(R.id.list_neighbours)).check(withItemCount(ITEMS_COUNT));
 
         onView(withId(R.id.list_neighbours)).perform(RecyclerViewActions.actionOnItemAtPosition(0, new OpenViewAction()));
 

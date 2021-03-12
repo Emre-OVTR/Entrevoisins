@@ -82,7 +82,7 @@ public class FavoritesFragment extends Fragment {
         initList();
     }
 
-    // Ajouté pour que l'item dans favlist se supprime instantanément
+
     @Subscribe
     public void onDeleteNeighbour(DeleteNeighbourEvent event) {
         mApiService.deleteNeighbour(event.neighbour);
