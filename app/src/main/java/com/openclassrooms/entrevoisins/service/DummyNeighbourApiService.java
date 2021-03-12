@@ -34,7 +34,7 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
      * {@inheritDoc}
      */
     @Override
-    public void deleteNeighbour(Neighbour neighbour) {
+    public void deleteNeighbour(Neighbour neighbour) { // boucle pour supprimer neighbour de neighbourlist et fav list en meme temps
 
         boolean isInList = false;
 
@@ -54,8 +54,8 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
             favorites.remove(neighbour);
         }
 
-        //neighbours.remove(neighbour);
-        //favorites.remove(neighbour);
+        // code original; neighbours.remove(neighbour);
+
     }
 
     /**

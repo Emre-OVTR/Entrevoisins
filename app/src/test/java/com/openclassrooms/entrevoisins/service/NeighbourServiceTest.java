@@ -87,6 +87,7 @@ public class NeighbourServiceTest {
 
     }
 
+    //Nouveau Test
     @Test
     public void deleteNeighbourFromFavoritesWithSuccess(){
         Neighbour neighbour = service.getNeighbours().get(0);

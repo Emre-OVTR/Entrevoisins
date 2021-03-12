@@ -66,8 +66,6 @@ public class NeighbourFragment extends Fragment implements Serializable {
         mNeighbours = mApiService.getNeighbours();
         mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mNeighbours));
 
-        //mFavorites = mApiService.getFavorites();
-        //mRecyclerView.setAdapter(new FavoritesRecyclerViewAdapter(mFavorites));
     }
 
     @Override

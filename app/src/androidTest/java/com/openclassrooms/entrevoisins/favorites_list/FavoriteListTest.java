@@ -54,7 +54,7 @@ public class FavoriteListTest {
 
         onView(withId(R.id.activity_info_fav_btn)).perform(ViewActions.click());
 
-
+        // modif pour verifier que la liste contient exactement un element et non pas "au moins un element"
         onView(withId(R.id.list_favorites)).check(withItemCount(ITEMS_COUNT + 1));
 
     }
