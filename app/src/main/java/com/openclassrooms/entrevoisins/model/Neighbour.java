@@ -5,35 +5,28 @@ package com.openclassrooms.entrevoisins.model;
 import java.io.Serializable;
 import java.util.Objects;
 
-/**
- * Model object representing a Neighbour
- */
+
 public class Neighbour implements Serializable {
 
-    /** Identifier */
+
     private long id;
 
-    /** Full name */
+
     private String name;
 
-    /** Avatar */
-    private String avatarUrl;
 
-    /** Adress */
-    private String address;
+    private final String avatarUrl;
 
-    /** Phone number */
-    private String phoneNumber;
 
-    /** About me */
-    private String aboutMe;
+    private final String address;
 
-    /**
-     * Constructor
-     * @param id
-     * @param name
-     * @param avatarUrl
-     */
+
+    private final String phoneNumber;
+
+
+    private final String aboutMe;
+
+
     public Neighbour(long id, String name, String avatarUrl, String address,
                      String phoneNumber, String aboutMe) {
         this.id = id;
@@ -65,32 +58,16 @@ public class Neighbour implements Serializable {
         return avatarUrl;
     }
 
-    public void setAvatarUrl(String avatarUrl) {
-        this.avatarUrl = avatarUrl;
-    }
-
     public String getAddress() {
         return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
     public String getAboutMe() {
         return aboutMe;
-    }
-
-    public void setAboutMe(String aboutMe) {
-        this.aboutMe = aboutMe;
     }
 
     @Override
