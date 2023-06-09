@@ -1,25 +1,17 @@
 package com.openclassrooms.entrevoisins.service;
 
-import android.util.Log;
-
 import com.openclassrooms.entrevoisins.model.Neighbour;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedHashSet;
 import java.util.List;
 
-/**
- * Dummy mock for the Api
- */
+
 public class DummyNeighbourApiService implements  NeighbourApiService {
 
-    private List<Neighbour> neighbours = DummyNeighbourGenerator.generateNeighbours();
+    private final List<Neighbour> neighbours = DummyNeighbourGenerator.generateNeighbours();
     public List<Neighbour> favorites =  new ArrayList<>();
 
-    /**
-     * {@inheritDoc}
-     */
+
     @Override
     public List<Neighbour> getNeighbours() {
         return neighbours;
@@ -30,9 +22,7 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
         return favorites;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+
     @Override
     public void deleteNeighbour(Neighbour neighbour) {
 
@@ -58,10 +48,7 @@ public class DummyNeighbourApiService implements  NeighbourApiService {
 
     }
 
-    /**
-     * {@inheritDoc}
-     * @param neighbour
-     */
+
     @Override
     public void createNeighbour(Neighbour neighbour) {
         neighbours.add(neighbour);

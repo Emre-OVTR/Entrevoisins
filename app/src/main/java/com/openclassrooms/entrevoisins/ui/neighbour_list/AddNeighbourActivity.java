@@ -25,17 +25,17 @@ import butterknife.OnClick;
 
 public class AddNeighbourActivity extends AppCompatActivity {
 
-    @BindView(R.id.avatar)
+    @BindView((R.id.avatar))
     ImageView avatar;
-    @BindView(R.id.nameLyt)
+    @BindView((R.id.nameLyt))
     TextInputLayout nameInput;
-    @BindView(R.id.phoneNumberLyt)
+    @BindView((R.id.phoneNumberLyt))
     TextInputLayout phoneInput;
-    @BindView(R.id.addressLyt)
+    @BindView((R.id.addressLyt))
     TextInputLayout addressInput;
-    @BindView(R.id.aboutMeLyt)
+    @BindView((R.id.aboutMeLyt))
     TextInputLayout aboutMeInput;
-    @BindView(R.id.create)
+    @BindView((R.id.create))
     MaterialButton addButton;
 
     private NeighbourApiService mApiService;
@@ -53,10 +53,9 @@ public class AddNeighbourActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                onBackPressed();
-                return true;
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -78,7 +77,7 @@ public class AddNeighbourActivity extends AppCompatActivity {
 
     }
 
-    @OnClick(R.id.create)
+    @OnClick((R.id.create))
     void addNeighbour() {
         Neighbour neighbour = new Neighbour(
                 System.currentTimeMillis(),
@@ -92,18 +91,12 @@ public class AddNeighbourActivity extends AppCompatActivity {
         finish();
     }
 
-    /**
-     * Generate a random image. Useful to mock image picker
-     * @return String
-     */
+
     String randomImage() {
         return "https://i.pravatar.cc/150?u="+ System.currentTimeMillis();
     }
 
-    /**
-     * Used to navigate to this activity
-     * @param activity
-     */
+
     public static void navigate(FragmentActivity activity) {
         Intent intent = new Intent(activity, AddNeighbourActivity.class);
         ActivityCompat.startActivity(activity, intent, null);
