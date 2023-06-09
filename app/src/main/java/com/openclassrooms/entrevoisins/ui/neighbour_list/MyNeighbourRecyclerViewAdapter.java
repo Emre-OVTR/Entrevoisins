@@ -1,5 +1,6 @@
 package com.openclassrooms.entrevoisins.ui.neighbour_list;
 
+import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -31,6 +32,7 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
         mNeighbours = items;
     }
 
+    @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
@@ -47,19 +49,9 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
                 .apply(RequestOptions.circleCropTransform())
                 .into(holder.mNeighbourAvatar);
 
-        holder.mDeleteButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EventBus.getDefault().post(new DeleteNeighbourEvent(neighbour));
-            }
-        });
+        holder.mDeleteButton.setOnClickListener(v -> EventBus.getDefault().post(new DeleteNeighbourEvent(neighbour)));
 
-        holder.mConstraintLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EventBus.getDefault().post(new OpenNeighbourEvent(neighbour));
-            }
-        });
+        holder.mConstraintLayout.setOnClickListener(v -> EventBus.getDefault().post(new OpenNeighbourEvent(neighbour)));
     }
 
     @Override
@@ -67,14 +59,14 @@ public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeigh
         return mNeighbours.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        @BindView(R.id.item_list_avatar)
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        @BindView((R.id.item_list_avatar))
         public ImageView mNeighbourAvatar;
-        @BindView(R.id.item_list_name)
+        @BindView((R.id.item_list_name))
         public TextView mNeighbourName;
-        @BindView(R.id.item_list_delete_button)
+        @BindView((R.id.item_list_delete_button))
         public ImageButton mDeleteButton;
-        @BindView(R.id.fragment_neighbour_layout)
+        @BindView((R.id.fragment_neighbour_layout))
         public ConstraintLayout mConstraintLayout;
 
         public ViewHolder(View view) {
