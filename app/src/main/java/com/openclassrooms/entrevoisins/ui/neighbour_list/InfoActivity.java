@@ -61,16 +61,7 @@ public class InfoActivity extends AppCompatActivity {
 
 
 
-        mInfoFavBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                mApiService.addFavorite(neighbour);
-                 finish();
-
-
-            }
-        });
+        mInfoFavBtn.setOnClickListener(v -> mApiService.addFavorite(neighbour));
 
     }
 
