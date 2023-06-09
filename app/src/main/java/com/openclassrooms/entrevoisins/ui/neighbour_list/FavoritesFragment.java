@@ -25,13 +25,11 @@ import java.util.List;
 public class FavoritesFragment extends Fragment {
 
     private NeighbourApiService mApiService;
-    private List<Neighbour> mFavorites;
     private RecyclerView mRecyclerView;
 
 
     public static FavoritesFragment newInstance() {
-        FavoritesFragment fragment = new FavoritesFragment();
-        return fragment;
+        return new FavoritesFragment();
     }
 
     @Override
@@ -47,13 +45,14 @@ public class FavoritesFragment extends Fragment {
         Context context = view.getContext();
         mRecyclerView = (RecyclerView) view;
         mRecyclerView.setLayoutManager(new LinearLayoutManager(context));
-        mRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(getContext()
+                , DividerItemDecoration.VERTICAL));
         return view;
     }
 
     private void initList() {
-        mFavorites = mApiService.getFavorites();
-        mRecyclerView.setAdapter(new FavoritesRecyclerViewAdapter(mFavorites));
+        List<Neighbour> favorites = mApiService.getFavorites();
+        mRecyclerView.setAdapter(new FavoritesRecyclerViewAdapter(favorites));
     }
 
     @Override
