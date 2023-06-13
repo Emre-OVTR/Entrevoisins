@@ -1,4 +1,4 @@
-# Développement et Tests
+# MàJ et maintenance
 
 # Fonctionnalités présentes dans l’application Entrevoisin
 ● lister mes voisins ;
