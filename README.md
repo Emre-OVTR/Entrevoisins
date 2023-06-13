@@ -1,11 +1,11 @@
 # Développement et Tests
 
-# Fonctionnalités présentes dans l’application Entrevoisins :
+# Fonctionnalités présentes dans l’application Entrevoisin
 ● lister mes voisins ;
 ● ajouter un voisin ;
 ● suppression d’un voisin.
 
-# Fonctionnalaités à ajouter 
+# Fonctionnalités à ajouter 
 Au clic sur un utilisateur, nouvel écran avec :
 ● un bouton de retour à l'élément précédent ;
 ● l'avatar de l'utilisateur ;
