@@ -1,4 +1,4 @@
-package com.openclassrooms.entrevoisins.ui.neighbour_list;
+package com.openclassrooms.entrevoisins.ui.favorite_neighbours_list;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -22,14 +22,14 @@ import org.greenrobot.eventbus.Subscribe;
 
 import java.util.List;
 
-public class FavoritesFragment extends Fragment {
+public class FavoriteNeighboursFragment extends Fragment {
 
     private NeighbourApiService mApiService;
     private RecyclerView mRecyclerView;
 
 
-    public static FavoritesFragment newInstance() {
-        return new FavoritesFragment();
+    public static FavoriteNeighboursFragment newInstance() {
+        return new FavoriteNeighboursFragment();
     }
 
     @Override
@@ -52,7 +52,7 @@ public class FavoritesFragment extends Fragment {
 
     private void initList() {
         List<Neighbour> favorites = mApiService.getFavorites();
-        mRecyclerView.setAdapter(new FavoritesRecyclerViewAdapter(favorites));
+        mRecyclerView.setAdapter(new FavoriteNeighboursRecyclerViewAdapter(favorites));
     }
 
     @Override

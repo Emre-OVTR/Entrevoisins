@@ -1,4 +1,4 @@
-package com.openclassrooms.entrevoisins.ui.neighbour_list;
+package com.openclassrooms.entrevoisins.ui;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -15,7 +15,7 @@ import com.openclassrooms.entrevoisins.service.NeighbourApiService;
 
 import java.util.Objects;
 
-public class InfoActivity extends AppCompatActivity {
+public class NeighbourInfoActivity extends AppCompatActivity {
 
     private Neighbour neighbour;
     private ImageView infoAvatar;

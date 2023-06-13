@@ -1,4 +1,4 @@
-package com.openclassrooms.entrevoisins.ui.neighbour_list;
+package com.openclassrooms.entrevoisins.ui.neighbours_list;
 
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
@@ -24,11 +24,11 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MyNeighbourRecyclerViewAdapter extends RecyclerView.Adapter<MyNeighbourRecyclerViewAdapter.ViewHolder> {
+public class NeighboursRecyclerViewAdapter extends RecyclerView.Adapter<NeighboursRecyclerViewAdapter.ViewHolder> {
 
     private final List<Neighbour> mNeighbours;
 
-    public MyNeighbourRecyclerViewAdapter(List<Neighbour> items)  {
+    public NeighboursRecyclerViewAdapter(List<Neighbour> items)  {
         mNeighbours = items;
     }
 

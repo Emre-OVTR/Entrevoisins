@@ -1,4 +1,4 @@
-package com.openclassrooms.entrevoisins.ui.neighbour_list;
+package com.openclassrooms.entrevoisins.ui.neighbours_list;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,6 +17,7 @@ import com.openclassrooms.entrevoisins.events.DeleteNeighbourEvent;
 import com.openclassrooms.entrevoisins.events.OpenNeighbourEvent;
 import com.openclassrooms.entrevoisins.model.Neighbour;
 import com.openclassrooms.entrevoisins.service.NeighbourApiService;
+import com.openclassrooms.entrevoisins.ui.NeighbourInfoActivity;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -57,7 +58,7 @@ public class NeighbourFragment extends Fragment implements Serializable {
 
     private void initList() {
         List<Neighbour> neighbours = mApiService.getNeighbours();
-        mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(neighbours));
+        mRecyclerView.setAdapter(new NeighboursRecyclerViewAdapter(neighbours));
 
     }
 
@@ -88,7 +89,7 @@ public class NeighbourFragment extends Fragment implements Serializable {
 
     @Subscribe
     public void onOpenNeighbour(OpenNeighbourEvent event) {
-        Intent i = new Intent(getContext(), InfoActivity.class);
+        Intent i = new Intent(getContext(), NeighbourInfoActivity.class);
         i.putExtra("Editing", event.neighbour);
         startActivity(i);
     }

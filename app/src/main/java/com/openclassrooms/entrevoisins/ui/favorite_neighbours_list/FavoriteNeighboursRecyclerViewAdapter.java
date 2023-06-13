@@ -1,4 +1,4 @@
-package com.openclassrooms.entrevoisins.ui.neighbour_list;
+package com.openclassrooms.entrevoisins.ui.favorite_neighbours_list;
 
 
 import android.support.annotation.NonNull;
@@ -23,11 +23,11 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class FavoritesRecyclerViewAdapter extends RecyclerView.Adapter<FavoritesRecyclerViewAdapter.ViewHolder> {
+public class FavoriteNeighboursRecyclerViewAdapter extends RecyclerView.Adapter<FavoriteNeighboursRecyclerViewAdapter.ViewHolder> {
 
     private final List<Neighbour> mFavorites;
 
-    public FavoritesRecyclerViewAdapter(List<Neighbour> items ){
+    public FavoriteNeighboursRecyclerViewAdapter(List<Neighbour> items ){
         mFavorites = items;
 
     }

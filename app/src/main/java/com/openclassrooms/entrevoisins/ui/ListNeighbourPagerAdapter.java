@@ -1,8 +1,11 @@
-package com.openclassrooms.entrevoisins.ui.neighbour_list;
+package com.openclassrooms.entrevoisins.ui;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+
+import com.openclassrooms.entrevoisins.ui.favorite_neighbours_list.FavoriteNeighboursFragment;
+import com.openclassrooms.entrevoisins.ui.neighbours_list.NeighbourFragment;
 
 
 public class ListNeighbourPagerAdapter extends FragmentPagerAdapter {
@@ -18,7 +21,7 @@ public class ListNeighbourPagerAdapter extends FragmentPagerAdapter {
             case 0:
                 return NeighbourFragment.newInstance();
             case 1:
-                return FavoritesFragment.newInstance();
+                return FavoriteNeighboursFragment.newInstance();
             default:
                 return null;
         }
