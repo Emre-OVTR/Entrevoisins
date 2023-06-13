@@ -26,4 +26,4 @@ Ce dépôt contient une mini-application pour le P3 du parcours **Grande École 
 
 # Infos
 
-Android SDK / MVC Design Pattern / Data persistence : No / UI Framework : Android View System / Libraries : - ButterKnife - Glide - EventBus
+Android SDK / MVC Design Pattern / Data persistence : No / UI Framework : Android View System / Libraries : - ButterKnife - Glide - EventBus / UI Test : Espresso / Unit Tests : JUnit
